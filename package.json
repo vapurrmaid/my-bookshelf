@@ -39,6 +39,9 @@
       "release": true,
       "releaseName": "Release ${version}",
       "tokenRef": "RELEASE_IT_GITHUB_TOKEN"
+    },
+    "npm": {
+      "publish": false
     }
   }
 }
