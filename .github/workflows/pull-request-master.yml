@@ -1,0 +1,22 @@
+name: Pull Request (master)
+
+on:
+  pull-request:
+    branches:
+      - master
+
+jobs:
+  check-pr:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v1
+      -
+        name: Lint
+        uses: npm run lint
+      -
+        name: Vulnerability Scsan
+        uses: npm audit
