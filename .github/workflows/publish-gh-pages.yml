@@ -14,6 +14,9 @@ jobs:
         name: Checkout
         uses: actions/checkout@v1
       -
+        name: Update Script Permissions
+        run: chmod -R 777 ./scripts/
+      -
         name: Install
         run: npm ci
       -
