@@ -1,0 +1,43 @@
+{
+  "name": "@vapurrmaid/my-bookshelf",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "npm run clean && mkdir dist && showdown makehtml -i src/bookshelf.md -o dist/index.html",
+    "clean": "rimraf dist",
+    "lint:md": "markdownlint **/*.md --ignore node_modules"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "markdownlint-cli": "^0.20.0",
+    "release-it": "^12.4.3",
+    "rimraf": "^3.0.0",
+    "showdown": "^1.9.1"
+  },
+  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.md": [
+      "npm run lint:md",
+      "git add"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitArgs": "--gpg-sign",
+      "commitMessage": ":rocket: v${version}",
+      "tagAnnotation": "v${version}",
+      "tagArgs": "--sign"
+    },
+    "github": {
+      "release": true,
+      "releaseName": "Release ${version}",
+      "tokenRef": "RELEASE_IT_GITHUB_TOKEN"
+    }
+  }
+}
