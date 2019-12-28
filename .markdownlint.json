@@ -4,5 +4,6 @@
     "headers": false,
     "line_length": 100,
     "tables": false
-  }
+  },
+  "MD041": false
 }

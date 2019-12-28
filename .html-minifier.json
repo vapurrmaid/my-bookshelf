@@ -1,0 +1,10 @@
+{
+  "collapseWhitespace": true,
+  "removeComments": true,
+  "removeOptionalTags": true,
+  "removeRedundantAttributes": true,
+  "removeScriptTypeAttributes": true,
+  "removeStyleLinkTypeAttributes": true,
+  "removeTagWhitespace": true,
+  "useShortDoctype": true
+}

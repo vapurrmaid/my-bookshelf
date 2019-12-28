@@ -1,0 +1,122 @@
+/**
+ * CONTENTS
+ *
+ * DOCUMENT GLOBALS
+ * font sizing...............Global font settings on html element.
+ * body boxing...............Global sizing on body element.
+ * headings..................Global headings set on the h1-h4 elements.
+ * lists.....................Global styles for ul, ol and li elements.
+ */
+
+
+
+
+/*------------------------------------*\
+  #FONT SIZING
+\*------------------------------------*/
+
+/**
+ * The value of 1rem changes based on the document's viewport.
+ *
+ * 1) > 1400px, 1rem = 16px
+ * 2) > 1200px, <= 1400px, 1rem = 14px
+ * 3) > 900px, <= 1200px, 1rem = 12px
+ * 4) <= 900x, 1rem = 10px
+ */
+
+html {
+  font-size: 100%; /* (1) */
+}
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 87.5%; /* (2) */
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 75%; /* (3) */
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 62.5%; /* (4) */
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  #BODY BOXING
+\*------------------------------------*/
+
+/**
+ * The body's padding changes based on the document's viewport.
+ *
+ * 1) > 900px
+ * 2) <= 900px
+ */
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 3rem; /* (1) */
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 0; /* (2) */
+  }
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+
+
+
+/*------------------------------------*\
+  #HEADINGS
+\*------------------------------------*/
+
+
+h1 {
+  border-bottom: 1px solid rgba(51,51,51,0.08);
+}
+
+h2 {
+  border-bottom: 2px dotted rgba(51,51,51,0.08);
+}
+
+h3::before {
+  content: "📚";
+}
+
+
+
+
+/*------------------------------------*\
+  #LISTS
+\*------------------------------------*/
+
+/**
+ * Materialize.css removes browser defaults unless a .browser-default class is
+ * manually applied. However, this page is simple, so the below just reapplies
+ * some of those browser defaults.
+ */
+
+ul:not(.browser-default) {
+  padding-left: 40px !important;
+}
+
+ul:not(.browser-default),
+ul:not(.browser-default) > li {
+  list-style-type: disc !important;
+  list-style: disc !important;
+}
