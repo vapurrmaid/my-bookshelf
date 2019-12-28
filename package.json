@@ -4,7 +4,8 @@
   "scripts": {
     "build": "npm run clean && mkdir dist && showdown makehtml -i src/bookshelf.md -o dist/index.html",
     "clean": "rimraf dist",
-    "lint:md": "markdownlint **/*.md --ignore node_modules"
+    "lint:md": "markdownlint **/*.md --ignore node_modules",
+    "release": "release-it"
   },
   "dependencies": {},
   "devDependencies": {
