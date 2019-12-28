@@ -2,13 +2,19 @@
   "name": "@vapurrmaid/my-bookshelf",
   "version": "0.1.2",
   "scripts": {
-    "build": "npm run clean && mkdir dist && showdown makehtml -i src/bookshelf.md -o dist/index.html",
+    "build": "cross-env ./scripts/build.sh",
     "clean": "rimraf dist",
     "lint:md": "markdownlint **/*.md --ignore node_modules",
     "release": "release-it"
   },
   "dependencies": {},
   "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "html-minifier": "^4.0.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "markdownlint-cli": "^0.20.0",
