@@ -1,3 +1,10 @@
+## 2020
+
+### Clean Architecture
+
+R. C. Martin, *Clean Architecture: A Craftsman's Guide to Software Structure and Design*. Prentice Hall,
+2017.
+
 ## 2019
 
 I primarily worked under a contract as a full-stack developer in enterprise rental management
@@ -10,13 +17,11 @@ Overall, I gained an appreciation for:
 
 ### Domain Driven Design
 
-E. Evans, *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Addison-Wesley
-Professional, 2003.
+E. Evans, *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Addison-Wesley, 2004.
 
 ### Patterns of Enterprise Application Architecture
 
-M. Fowler, *Patterns of Enterprise Application Architecture*, 1st ed. Addison-Wesley Professional,
-2002.
+M. Fowler, *Patterns of Enterprise Application Architecture*, Addison-Wesley Professional, 2002.
 
 ### Refactoring
 
