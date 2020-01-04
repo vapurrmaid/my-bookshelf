@@ -15,19 +15,19 @@ R. C. Martin, *Clean Architecture: A Craftsman's Guide to Software Structure and
 
 ##### Software is Both Consistent and Always Changing
 
-- Code/programming has changed very little (by contrast, tools and processing have)
-- architectural rules are *consistent*, even across system types and time
+- programming has changed very little (by contrast, tools and processing have)
+    - architectural rules are *consistent*, even across systems and time
 - software is *soft*; design for change intentionally
 
 ##### Programming in the Small and Large
 
-- proper functional decomposition applied at all levels keeps everything *testable*
+- **functional decomposition** applied at all levels keeps everything *testable*
 - paradigms impose *discipline*
-    - structured paradigm imposes disciplined use of direct transfer of control (`goto`)
-    - OO paradigm imposes disciplined use of indirect transfer of control (polymorphism)
-    - functional paradigm imposes disciplined use of assignment (mutability)
-- polymorphic *plugins*; programs should be device (detail) independent
-- *dependency inversion* can be applied anywhere to control direction of dependents
+    - **structured paradigm** imposes disciplined use of direct transfer of control (`goto`)
+    - **OO** imposes disciplined use of indirect transfer of control (polymorphism)
+    - **functional paradigm** imposes disciplined use of assignment (mutability)
+- **plugins** via polymorphism; design for device (detail) independence
+- **dependency inversion** can be applied anywhere to control direction of dependents
 - Segregate *immutable* (functional) components from immutable ones
 
 #### Review
