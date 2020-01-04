@@ -13,13 +13,13 @@ R. C. Martin, *Clean Architecture: A Craftsman's Guide to Software Structure and
 - *structure* is more valuable than behaviour, because it imposes/dictates it
 - start/stay *clean*: you won't have time to go back (only way to go fast is to go well)
 
-##### Software is both consistent and ever-changing
+##### Software is Both Consistent and Always Changing
 
 - Code/programming has changed very little (by contrast, tools and processing have)
 - architectural rules are *consistent*, even across system types and time
 - software is *soft*; design for change intentionally
 
-##### Programming in the small and large
+##### Programming in the Small and Large
 
 - proper functional decomposition applied at all levels keeps everything *testable*
 - paradigms impose *discipline*
