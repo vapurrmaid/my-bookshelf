@@ -4,6 +4,7 @@
  * DOCUMENT GLOBALS
  * font sizing...............Global font settings on html element.
  * body boxing...............Global sizing on body element.
+ * code......................Global styles set on the code element.
  * headings..................Global headings set on the h1-h4 elements.
  * lists.....................Global styles for ul, ol and li elements.
  */
@@ -76,6 +77,18 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+
+
+
+/*------------------------------------*\
+  #CODE
+\*------------------------------------*/
+
+code {
+  background-color: #eee; /* MaterializeCSS .grey.lighten-3 */
+  color: #c62828;         /* MaterializeCSS .red-text.text-darken-3 */
 }
 
 
