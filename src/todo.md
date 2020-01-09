@@ -2,6 +2,7 @@
 
 - Building Microservices (Newman)
 - Domain Driven Design (Evans)
+- On Truth and Lies in a Nonmoral Sense (Nietzsche)
 - Patterns of Enterprise Application Architecture (Fowler)
 - Refactoring (Fowler)
 
