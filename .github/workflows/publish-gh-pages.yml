@@ -25,12 +25,11 @@ jobs:
       -
         name: Deploy
         if: success()
-        uses: crazy-max/ghaction-github-pages@v1.2.5
+        uses: crazy-max/ghaction-github-pages@v1.3.0
         with:
           target_branch: gh-pages
           keep_history: true
           build_dir: dist
-          fqdn: vapurrmaid.ca
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
 
