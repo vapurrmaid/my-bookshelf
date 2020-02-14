@@ -17,6 +17,7 @@
     "lint-staged": "^9.5.0",
     "markdownlint-cli": "^0.20.0",
     "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
     "release-it": "^12.4.3",
     "rimraf": "^3.0.0",
     "showdown": "^1.9.1"
@@ -29,7 +30,8 @@
   },
   "lint-staged": {
     "*.md": [
-      "npm run lint:md",
+      "yarn lint:md",
+      "prettier --write",
       "git add"
     ]
   },

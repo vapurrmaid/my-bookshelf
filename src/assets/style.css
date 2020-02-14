@@ -7,6 +7,9 @@
  * code......................Global styles set on the code element.
  * headings..................Global headings set on the h1-h4 elements.
  * lists.....................Global styles for ul, ol and li elements.
+ *
+ * TYPOGRAPHY CLASSES
+ * indent....................Adds left indentation.
  */
 
 
@@ -128,4 +131,15 @@ ul:not(.browser-default),
 ul:not(.browser-default) > li {
   list-style-type: disc !important;
   list-style: disc !important;
+}
+
+
+
+
+/*------------------------------------*\
+  #INDENT
+\*------------------------------------*/
+
+.indent {
+  padding-left: 4rem;
 }
