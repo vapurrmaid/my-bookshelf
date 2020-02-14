@@ -5,7 +5,7 @@
     "build": "cross-env ./scripts/build.sh",
     "clean": "rimraf dist",
     "lint": "npm-run-all lint:*",
-    "lint:md": "markdownlint **/*.md --ignore node_modules",
+    "lint:md": "prettier --write **/*.md",
     "release": "release-it"
   },
   "dependencies": {},
@@ -30,7 +30,6 @@
   },
   "lint-staged": {
     "*.md": [
-      "yarn lint:md",
       "prettier --write",
       "git add"
     ]

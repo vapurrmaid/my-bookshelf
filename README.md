@@ -1,3 +1,5 @@
+![Publish to GH Pages](https://github.com/vapurrmaid/my-bookshelf/workflows/Publish%20to%20GH%20Pages/badge.svg)
+
 # Vapurrmaid's Bookshelf
 
 A website containing key/noteworthy books on Vapurrmaid's bookshelf.
