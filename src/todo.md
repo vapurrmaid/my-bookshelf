@@ -6,6 +6,7 @@
 - On Truth and Lies in a Nonmoral Sense (Nietzsche)
 - Patterns of Enterprise Application Architecture (Fowler)
 - Refactoring (Fowler)
+- The Ethics of Ambiguity (Beauvoir)
 
 ## To Read
 
