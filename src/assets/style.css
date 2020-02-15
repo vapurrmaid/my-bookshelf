@@ -1,25 +1,221 @@
 /**
  * CONTENTS
  *
- * DOCUMENT GLOBALS
+ * NORMALIZE
+ * all of the settings here are custom copied from normalize.css
+ *
+ * DOCUMENT_GLOBALS
+ * font......................Global font faces
  * font sizing...............Global font settings on html element.
  * body boxing...............Global sizing on body element.
  * code......................Global styles set on the code element.
  * headings..................Global headings set on the h1-h4 elements.
- * lists.....................Global styles for ul, ol and li elements.
  *
- * TYPOGRAPHY CLASSES
+ * GRID_CLASSES
+ * container.................Body container.
+
+ * NAVIGATION
+ * navigation................Top-level navigation (<nav>) styles
+ * navigation__home..........Navigation home/logo styles.
+ * navigation__list..........Styles list of navigation items.
+ * navigation__list__item....Styles individual items in nav list.
+ * navigation__link..........Styles nav links (<a>) to other pages.
+ *
+ * SWITCH
+ * switch.....................classes adapted from materializecss
+ *
+ * FOOTER
+ *
+ * TYPOGRAPHY_CLASSES
+ * blue-link.................Adds colouring effects for an <a> tag.
+ * grey-bg...................Adds light-grey background colour
  * indent....................Adds left indentation.
+ *
+ * UTILITIES
+ * flex-center...............Helper for flex, align-items center.
  */
 
-
-
-
 /*------------------------------------*\
-  #FONT SIZING
+  #NORMALIZE
 \*------------------------------------*/
 
 /**
+ * Custom parts from normalize.css.
+ * See: https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css
+ */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/*------------------------------------*\
+  #DOCUMENT_GLOBALS
+\*------------------------------------*/
+
+/**
+ * Sets the default font face
+ */
+@font-face {
+  font-family: "NanumGothic";
+  src: url(NanumGothic-Regular.ttf) format("truetype");
+}
+
+html,
+body {
+  color: rgba(0, 0, 0, 0.87);
+  font-family: "NanumGothic", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+body.dark {
+  background-color: #263238;
+  color: #f3e5f5da;
+}
+
+/**
+ * Sets the default font sizing
+ *
  * The value of 1rem changes based on the document's viewport.
  *
  * 1) > 1400px, 1rem = 16px
@@ -50,14 +246,9 @@ html {
   }
 }
 
-
-
-
-/*------------------------------------*\
-  #BODY BOXING
-\*------------------------------------*/
-
 /**
+ * Sets the default boxing
+ *
  * The body's padding changes based on the document's viewport.
  *
  * 1) > 900px
@@ -82,64 +273,243 @@ main {
   flex: 1 0 auto;
 }
 
-
-
-
-/*------------------------------------*\
-  #CODE
-\*------------------------------------*/
+/**
+ * Sets default style for <code> tag.
+ */
 
 code {
-  background-color: #eee; /* MaterializeCSS .grey.lighten-3 */
-  color: #c62828;         /* MaterializeCSS .red-text.text-darken-3 */
+  background-color: #eee;
+  color: #c62828;
 }
 
+body.dark code {
+  background-color: #000000;
+  color: #ea80fc;
+}
 
-
-
-/*------------------------------------*\
-  #HEADINGS
-\*------------------------------------*/
-
+/**
+ * Sets default style for <h1>-<h2> tags.
+ */
 
 h1 {
-  border-bottom: 1px solid rgba(51,51,51,0.08);
+  border-bottom: 1px solid rgba(51, 51, 51, 0.08);
+}
+
+body.dark h1 {
+  border-bottom: 1px solid #f3e5f52b;
 }
 
 h2 {
-  border-bottom: 2px dotted rgba(51,51,51,0.08);
+  border-bottom: 2px dotted rgba(51, 51, 51, 0.08);
 }
 
-
-
+body.dark h2 {
+  border-bottom: 2px dotted #f3e5f52b;
+}
 
 /*------------------------------------*\
-  #LISTS
+  #GRID
+\*------------------------------------*/
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  min-height: 568px;
+  min-width: 320px;
+  width: 90%;
+}
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 70%;
+  }
+}
+
+/*------------------------------------*\
+  #NAVIGATION
+\*------------------------------------*/
+
+.navigation {
+  height: 50px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.navigation__home {
+  border-right: 1.25px solid #bbbbbb;
+  display: inline-block;
+  font-size: 2.1rem;
+  margin-left: 10px;
+  padding: 0 10px 0 0;
+}
+
+body.dark {
+  border-right: 1.25px solid #444444;
+}
+
+.navigation__list {
+  list-style: none;
+  list-style-type: none;
+  margin: 0 0 0 5px;
+  padding: 0;
+}
+
+.navigation__list__item {
+  display: inline;
+  list-style-type: none;
+}
+
+.navigation__link {
+  padding: 10px 5px;
+}
+
+.navigation__switch {
+  margin: 0 10px 0 auto;
+}
+
+/*------------------------------------*\
+  #SWITCH
 \*------------------------------------*/
 
 /**
- * Materialize.css removes browser defaults unless a .browser-default class is
- * manually applied. However, this page is simple, so the below just reapplies
- * some of those browser defaults.
+ * The .switch classes were adapted from materializecss
  */
 
-ul:not(.browser-default) {
-  padding-left: 40px !important;
+.switch {
+  user-select: none;
 }
 
-ul:not(.browser-default),
-ul:not(.browser-default) > li {
-  list-style-type: disc !important;
-  list-style: disc !important;
+.switch__label {
+  cursor: pointer;
 }
 
+.switch__input {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
 
+.switch__input:checked + .switch__lever {
+  background-color: #4a148c;
+}
 
+.switch__input:checked + .switch__lever:before,
+.switch__input:checked + .switch__lever:after {
+  left: 18px;
+}
+
+.switch__input:checked + .switch__lever:after {
+  background-color: #6a1b9a;
+}
+
+.switch__lever {
+  background-color: rgba(0, 0, 0, 0.38);
+  border-radius: 15px;
+  content: "";
+  display: inline-block;
+  height: 14px;
+  margin: 0 5px;
+  position: relative;
+  transition: background 0.3s ease;
+  vertical-align: middle;
+  width: 36px;
+}
+
+.switch__lever:before,
+.switch__lever:after {
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: -3px;
+  transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease,
+    transform 0.1s ease;
+  width: 20px;
+}
+
+.switch__lever:before {
+  background-color: #7b1fa2;
+  opacity: 0.15;
+}
+
+.switch__lever:after {
+  background-color: #f1f1f1;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.switch__input:checked ~ .switch__lever:active::before,
+.switch__input:checked.tabbed:focus ~ .switch__lever::before {
+  transform: scale(2.4);
+  background-color: #7b1fa2;
+}
+
+.switch__input ~ .switch__lever:active:before,
+.switch__input.tabbed:focus ~ .switch__lever::before {
+  transform: scale(2.4);
+  background-color: rgba(0, 0, 0, 0.08);
+}
 
 /*------------------------------------*\
-  #INDENT
+  #FOOTER
 \*------------------------------------*/
+
+.footer {
+  align-items: center;
+  display: flex;
+  height: 50px;
+  padding: 10px 0;
+}
+
+/*------------------------------------*\
+  #TYPOGRAPHY_CLASSES
+\*------------------------------------*/
+
+.blue-link,
+.blue-link:active,
+.blue-link:focus,
+.blue-link:hover,
+.blue-link:visited {
+  color: #039be5;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.blue-link:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+body.dark .blue-link {
+  color: #aa00ff;
+}
+
+.grey-bg {
+  background-color: rgba(51, 51, 51, 0.08);
+}
+
+body.dark .grey-bg {
+  background-color: #0000003b;
+}
 
 .indent {
   padding-left: 4rem;
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+.flex-center {
+  align-items: center;
+  display: flex;
 }

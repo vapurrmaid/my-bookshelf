@@ -24,11 +24,14 @@ CONVERTED_BOOKSHELF_MARKDOWN=`./node_modules/.bin/showdown makehtml -i src/books
 CONVERTED_TODO_MARKDOWN=`./node_modules/.bin/showdown makehtml -i src/todo.md`
 
 printf "Injecting HTML\n"
-# Replaces %CONTENT% %FOOTER% %SCRIPT% in dist/*.html files
+# Replaces %NAV_HEADER% %CONTENT% %FOOTER% %SCRIPT% in dist/*.html files
 # This must be done BEFORE minification as sed matches the entire line
+sed -i -e "/%NAV%/r src/partials/_nav.html" -e "/%NAV%/d" dist/index.html
 sed -i -e "/%CONTENT%/a $(echo $CONVERTED_BOOKSHELF_MARKDOWN)" -e "/%CONTENT%/d" dist/index.html
 sed -i -e "/%FOOTER%/r src/partials/_footer.html" -e "/%FOOTER%/d" dist/index.html
 sed -i -e "/\/\/%SCRIPT%/r src/partials/_script.js" -e "/\/\/%SCRIPT%/d" dist/index.html
+
+sed -i -e "/%NAV%/r src/partials/_nav.html" -e "/%NAV%/d" dist/todo.html
 sed -i -e "/%CONTENT%/a $(echo $CONVERTED_TODO_MARKDOWN)" -e "/%CONTENT%/d" dist/todo.html
 sed -i -e "/%FOOTER%/r src/partials/_footer.html" -e "/%FOOTER%/d" dist/todo.html
 sed -i -e "/\/\/%SCRIPT%/r src/partials/_script.js" -e "/\/\/%SCRIPT%/d" dist/todo.html
