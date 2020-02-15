@@ -14,8 +14,12 @@ CONVERTED_TODO_MARKDOWN=`./node_modules/.bin/showdown makehtml -i src/todo.md`
 printf "Injecting HTML\n"
 sed -i "/%CONTENT%/a $(echo $CONVERTED_BOOKSHELF_MARKDOWN)" dist/index.html
 sed -i "/%CONTENT%/d" dist/index.html
+sed -i -e "/%FOOTER%/r src/partials/_footer.html" -e "/%FOOTER%/d" dist/index.html
+sed -i -e "/\/\/%SCRIPT%/r src/partials/_script.js" -e "/\/\/%SCRIPT%/d" dist/index.html
 sed -i "/%CONTENT%/a $(echo $CONVERTED_TODO_MARKDOWN)" dist/todo.html
 sed -i "/%CONTENT%/d" dist/todo.html
+sed -i -e "/%FOOTER%/r src/partials/_footer.html" -e "/%FOOTER%/d" dist/todo.html
+sed -i -e "/\/\/%SCRIPT%/r src/partials/_script.js" -e "/\/\/%SCRIPT%/d" dist/todo.html
 
 printf "Converting Emojis\n"
 sed -i "s/:books:/📚/g" dist/index.html

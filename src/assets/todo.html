@@ -27,23 +27,10 @@
       %CONTENT%
     </main>
 
-    <footer class="page-footer white">
-      <div class="footer-copyright">
-        <div class="grey-text text-darken-4">
-          <p id="copyrightText" class="indent">
-            <a href="https://github.com/vapurrmaid/my-bookshelf">Vapurrmaid</a>
-          </p>
-        </div>
-      </div>
-    </footer>
+    %FOOTER%
 
     <script>
-      // insert the current year into the copyright
-      const copyrightText = document.getElementById("copyrightText");
-      copyrightText.insertAdjacentText(
-        "afterbegin",
-        `\u00A9 ${new Date().getFullYear()} `
-      );
+      //%SCRIPT%
     </script>
   </body>
 </html>
