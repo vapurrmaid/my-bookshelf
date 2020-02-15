@@ -1,6 +1,6 @@
 ## 2020
 
-### :books: Clean Architecture
+### 📚 Clean Architecture
 
 R. C. Martin, _Clean Architecture: A Craftsman's Guide to Software Structure and Design_. Prentice Hall, 2017.
 
@@ -38,7 +38,7 @@ like an aftermath more than the main punch. Instead, the book succeeds at defini
 goals, along with well-depicted descriptions, metrics and elements that are used to design and
 evaluate software systems.
 
-### :books: Fundamentals of Music Processing
+### 📚 Fundamentals of Music Processing
 
 todo
 
@@ -52,15 +52,15 @@ Overall, I gained an appreciation for:
 - designing objects for change (this is a common motif in enterprise)
 - handling legacy systems and major codebase changes
 
-### :books: Domain Driven Design
+### 📚 Domain Driven Design
 
 E. Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software_. Addison-Wesley, 2004.
 
-### :books: Patterns of Enterprise Application Architecture
+### 📚 Patterns of Enterprise Application Architecture
 
 M. Fowler, _Patterns of Enterprise Application Architecture_, Addison-Wesley Professional, 2002.
 
-### :books: Refactoring
+### 📚 Refactoring
 
 M. Fowler, _Refactoring: Improving the Design of Existing Code_, 2nd ed. Addison-Wesley
 Professional, 2018.
