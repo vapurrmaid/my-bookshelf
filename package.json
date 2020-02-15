@@ -1,6 +1,6 @@
 {
   "name": "@vapurrmaid/my-bookshelf",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "scripts": {
     "build": "cross-env ./scripts/build.sh",
     "clean": "rimraf dist",
