@@ -6,24 +6,18 @@ on:
 
 jobs:
   publish:
-
     runs-on: ubuntu-latest
 
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v1
-      -
-        name: Update Script Permissions
+      - name: Update Script Permissions
         run: chmod -R 777 ./scripts/
-      -
-        name: Install
+      - name: Install
         run: yarn
-      -
-        name: Build
+      - name: Build
         run: yarn run build
-      -
-        name: Deploy
+      - name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v1.3.0
         with:
@@ -32,4 +26,3 @@ jobs:
           build_dir: dist
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
-

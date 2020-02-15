@@ -7,19 +7,14 @@ on:
 
 jobs:
   check-pr:
-
     runs-on: ubuntu-latest
 
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v1
-      -
-        name: Install
+      - name: Install
         run: yarn
-      -
-        name: Lint
+      - name: Lint
         run: yarn run lint
-      -
-        name: Vulnerability Scsan
+      - name: Vulnerability Scan
         run: yarn audit
