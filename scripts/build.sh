@@ -2,6 +2,9 @@
 
 set -eou pipefail
 
+# Ensure the script runs from .git root directory
+pushd $(git rev-parse --show-toplevel)
+
 printf "Cleaning dist\n"
 rm -rf dist
 mkdir dist
@@ -29,3 +32,6 @@ printf "Minifying HTML\n"
 
 printf "Minifying CSS\n"
 ./node_modules/.bin/cleancss -O 1 --output dist/style.css dist/style.css
+
+# Reset directory stack
+popd
