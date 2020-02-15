@@ -7,7 +7,8 @@ A website containing key/noteworthy books on Vapurrmaid's bookshelf.
 
 ## Genres
 
-Although most books maintained on this list are related to software, this bookshelf will contain books from the following genres:
+Although most books maintained on this list are related to software, this
+bookshelf will contain books from the following genres:
 
 - computer/software/technology
 - philosophy
@@ -16,7 +17,8 @@ Although most books maintained on this list are related to software, this booksh
 
 ## Why
 
-This website helps its maintainer(s) reflect on key learnings, so that they may be referenced again for personal or professional reasons.
+This website helps its maintainer(s) reflect on key learnings, so that they may
+be referenced again for personal or professional reasons.
 
 ## Development Notes
 
@@ -34,12 +36,36 @@ src/*.md            - markdown content to be injected into output html page(s).
 
 Run the `build.sh` script either through `yarn` or directly:
 
-```sh
+```bash
 ./scripts/build.sh
 yarn build
 ```
 
-The script will create static assets in `dist/`. The `dist/` directory is the deployable unit (web server root).
+The script will create static assets in `dist/`. The `dist/` directory is the
+deployable unit (web server root).
+
+#### Options
+
+```text
+build.sh            - cleans, then builds a minified output.
+build.sh --dev-mode - builds the output **without** cleaning or minifying.
+```
+
+### Development
+
+Run the `dev.sh` script either through `yarn` or directly:
+
+```bash
+./scripts/dev.sh
+yarn dev
+```
+
+The script will:
+
+- open your default browser on port `8080`
+- `watch` for changes to `src` directory and trigger `yarn build` on change
+- reload changes in the browser whenever the `dist` contents change (presumably
+  from the prior step)
 
 ### Helpful VS Code Extensions
 
