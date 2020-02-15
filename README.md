@@ -3,17 +3,26 @@
 
 # Vapurrmaid's Bookshelf
 
-A website containing key/noteworthy books on Vapurrmaid's bookshelf.
+A website containing noteworthy books on Vapurrmaid's bookshelf.
 
 ## Genres
 
-Although most books maintained on this list are related to software, this
-bookshelf will contain books from the following genres:
+Although most books maintained on this list are related to software, the
+bookshelf will include the following genres:
 
 - computer/software/technology
 - philosophy
 - science
 - self-help
+
+In general, Vapurrmaid is most interested in:
+
+- applied signal processing
+- cognition and consciousness
+- epistemology
+- existentialism
+- object design
+- relationships
 
 ## Why
 
@@ -72,3 +81,17 @@ The script will:
 - [Emoji](https://marketplace.visualstudio.com/items?itemName=Perkovec.emoji)
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+### Why a Customized Vanilla Setup
+
+While many useful content management systems and frameworks exist, I wanted to
+create something from scratch without any dependencies. While I'm aware that
+reinventing the wheel is usually not a best practice for professional artefacts,
+this project is a labour of love. Furthermore, I find homebrewing to be
+educational and rewarding.
+
+The setup is compact and performant as a result of having very few working
+parts. The resulting website does not pull in any external css, fonts or
+scripts. Furthermore the cognitive effort required to learn the development
+toolchain and project architecture is very small, and does not need to be
+continually updated against new releases of dependencies.
