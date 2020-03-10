@@ -7,6 +7,7 @@
 - Patterns of Enterprise Application Architecture (Fowler)
 - Refactoring (Fowler)
 - The Ethics of Ambiguity (Beauvoir)
+- Invisible Women (Criado-Perez)
 
 ## To Read
 
