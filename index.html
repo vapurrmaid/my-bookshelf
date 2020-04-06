@@ -1,0 +1,46 @@
+<!doctypehtml><html lang="en"><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><link rel="stylesheet"href="style.css"><title>Vapurrmaid | Noteworthy Books & Articles</title><body class="container"><header><nav class="grey-bg flex-center navigation"><a href="index.html"class="navigation__home">📚</a><ul class="navigation__list"><li class="navigation__list__item"><a class="blue-link navigation__link"href="index.html">Book List</a><li class="navigation__list__item"><a class="blue-link navigation__link"href="todo.html">Review List</a></ul><div class="navigation__switch"></div></nav></header><header><h1>Noteworthy Books & Articles</h1><p>A personalized collection of noteworthy abooks, articles and other texts.</header><main><h2 id="2020">2020</h2><h3 id="cleanarchitecture">📚 Clean Architecture</h3><p>R. C. Martin, <em>Clean Architecture: A Craftsman's Guide to Software Structure and Design</em>. Prentice Hall, 2017.<h4 id="keypoints">Key Points</h4><h5 id="goalsandimportanceofarchitecturedesignstructure">Goals and Importance of Architecture/Design/Structure</h5><ul><li>the goal of architecture is to <em>minimize</em> human resources<li><em>structure</em> is more valuable than behaviour, because it imposes/dictates it<li>start/stay <em>clean</em>: you won't have time to go back (only way to go fast is to go well)</ul><h5 id="softwareisbothconsistentandalwayschanging">Software is Both Consistent and Always Changing</h5><ul><li>programming has changed very little (by contrast, tools and processing have)<li>architectural rules are <em>consistent</em>, even across systems and time<li>software is <em>soft</em>; design for change intentionally</ul><h5 id="programminginthesmallandlarge">Programming in the Small and Large</h5><ul><li><strong>functional decomposition</strong> applied at all levels keeps everything <em>testable</em><li>paradigms impose <em>discipline</em><li><strong>structured paradigm</strong> imposes disciplined use of direct transfer of control (<code>goto</code>)<li><strong>OO</strong> imposes disciplined use of indirect transfer of control (polymorphism)<li><strong>functional paradigm</strong> imposes disciplined use of assignment (mutability)<li><strong>plugins</strong> via polymorphism; design for device (detail) independence<li><strong>dependency inversion</strong> can be applied anywhere to control direction of dependents<li>Segregate <em>immutable</em> (functional) components from immutable ones</ul><h4 id="review">Review</h4><p>Robert Martin's "Clean Architecture" offers <em>solid</em> advice in building systems while offering little in terms of concrete code examples and architectural blueprints. Indeed, the end of the book contains a short chapter unveiling what's commonly considered as "The Onion Architecture", but this reveal feels like an aftermath more than the main punch. Instead, the book succeeds at defining architecture and its goals, along with well-depicted descriptions, metrics and elements that are used to design and evaluate software systems.<h3 id="fundamentalsofmusicprocessing">📚 Fundamentals of Music Processing</h3><p>todo<h2 id="2019">2019</h2><p>I primarily worked under a contract as a full-stack developer in enterprise rental management software. Unsurprisingly, I sought resources that would help with the work I was conducting. Overall, I gained an appreciation for:<ul><li>actively refactoring as part of a sprint cycle<li>designing objects for change (this is a common motif in enterprise)<li>handling legacy systems and major codebase changes</ul><h3 id="domaindrivendesign">📚 Domain Driven Design</h3><p>E. Evans, <em>Domain-Driven Design: Tackling Complexity in the Heart of Software</em>. Addison-Wesley, 2004.<h3 id="patternsofenterpriseapplicationarchitecture">📚 Patterns of Enterprise Application Architecture</h3><p>M. Fowler, <em>Patterns of Enterprise Application Architecture</em>, Addison-Wesley Professional, 2002.<h3 id="refactoring">📚 Refactoring</h3><p>M. Fowler, <em>Refactoring: Improving the Design of Existing Code</em>, 2nd ed. Addison-Wesley Professional, 2018.</main><footer class="grey-bg footer"><div id="copyrightText"class="indent"><noscript>&copy;</noscript><a class="blue-link"href="https://github.com/vapurrmaid/my-bookshelf">vapurrmaid</a></div></footer><script>// insert the current year into the copyright
+const copyrightText = document.getElementById("copyrightText");
+if (copyrightText) {
+  copyrightText.insertAdjacentText(
+    "afterbegin",
+    `\u00A9 ${new Date().getFullYear()} `
+  );
+}
+
+// insert the theme selector switch into the navbar
+const navSw = document.getElementsByClassName("navigation__switch")[0];
+if (navSw) {
+  const sw = document.createElement("div");
+  sw.classList.add("switch");
+  sw.innerHTML = `
+  <label class="switch__label" for="themeSwitch">
+    Light
+    <input class="switch__input" id="themeSwitch" type="checkbox" />
+    <span class="switch__lever"></span>
+    Dark
+  </label>
+`;
+
+  navSw.appendChild(sw);
+
+  const themeSw = document.getElementById("themeSwitch");
+  themeSw.addEventListener("change", function () {
+    const body = document.getElementsByTagName("body")[0];
+
+    if (this.checked && body) {
+      body.classList.toggle("dark", true);
+      localStorage.setItem("THEME", "DARK");
+    }
+    if (!this.checked && body) {
+      body.classList.toggle("dark", false);
+      localStorage.setItem("THEME", "LIGHT");
+    }
+  });
+
+  // grab theme from local storage
+  const lastTheme = localStorage.getItem("THEME");
+  if (lastTheme === "DARK") {
+    themeSw.checked = true;
+    themeSw.dispatchEvent(new Event("change"));
+  }
+}</script>

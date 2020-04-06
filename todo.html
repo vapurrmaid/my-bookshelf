@@ -1,0 +1,46 @@
+<!doctypehtml><html lang="en"><meta charset="UTF-8"><meta name="viewport"content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible"content="ie=edge"><link rel="stylesheet"href="style.css"><title>Vapurrmaid | Books To Be Read, Reviewed</title><body class="container"><header><nav class="grey-bg flex-center navigation"><a href="index.html"class="navigation__home">📚</a><ul class="navigation__list"><li class="navigation__list__item"><a class="blue-link navigation__link"href="index.html">Book List</a><li class="navigation__list__item"><a class="blue-link navigation__link"href="todo.html">Review List</a></ul><div class="navigation__switch"></div></nav></header><header><h1>Books To Be Reviewed</h1><p>Items I'm in the process of reviewing or want to read.</header><main><h2 id="tobereviewed">To Be Reviewed</h2><ul><li>Building Microservices (Newman)<li>Domain Driven Design (Evans)<li>Nausea (Sartre)<li>On Truth and Lies in a Nonmoral Sense (Nietzsche)<li>Patterns of Enterprise Application Architecture (Fowler)<li>Refactoring (Fowler)<li>The Ethics of Ambiguity (Beauvoir)<li>Invisible Women (Criado-Perez)</ul><h2 id="toread">To Read</h2><ul><li>Dietrich, E., 2017. Developer Hegemony: The Future Of Labor. Daedtech.<li>Elliot, E., 2019. Composing Software: An Exploration of Functional Programming and Object Composition in JavaScript. Leanpub.<li>Gamma, E., 1995. Design Patterns: Elements Of Reusable Object-oriented Software. Addison-wesley Professional.<li>Holub, A., 2004. Holub on Patterns: Learning Design Patterns by Looking at Code. APress.<li>Kleppmann, M., 2017. Designing Data-intensive Applications: The Big Ideas Behind Reliable, Scalable, And Maintainable Systems. O'reilly Media.<li>Martin R., C., 2019. Clean Agile: Back To Basics (robert C. Martin Series). Prentice Hall.<li>Martin R., C., 2009. Clean Code. Prentice Hall.<li>Martin R., C., 2011. The Clean Coder: A Code Of Conduct For Professional Programmers. Prentice Hall.<li>Muller, M., 2015. Fundamentals of Music Processing. Springer.<li>Negus, C., 2020. Linux Bible. Wiley.<li>Thompson, C., 2019. Coders: The Making Of A New Tribe And The Remaking Of The World.</ul></main><footer class="grey-bg footer"><div id="copyrightText"class="indent"><noscript>&copy;</noscript><a class="blue-link"href="https://github.com/vapurrmaid/my-bookshelf">vapurrmaid</a></div></footer><script>// insert the current year into the copyright
+const copyrightText = document.getElementById("copyrightText");
+if (copyrightText) {
+  copyrightText.insertAdjacentText(
+    "afterbegin",
+    `\u00A9 ${new Date().getFullYear()} `
+  );
+}
+
+// insert the theme selector switch into the navbar
+const navSw = document.getElementsByClassName("navigation__switch")[0];
+if (navSw) {
+  const sw = document.createElement("div");
+  sw.classList.add("switch");
+  sw.innerHTML = `
+  <label class="switch__label" for="themeSwitch">
+    Light
+    <input class="switch__input" id="themeSwitch" type="checkbox" />
+    <span class="switch__lever"></span>
+    Dark
+  </label>
+`;
+
+  navSw.appendChild(sw);
+
+  const themeSw = document.getElementById("themeSwitch");
+  themeSw.addEventListener("change", function () {
+    const body = document.getElementsByTagName("body")[0];
+
+    if (this.checked && body) {
+      body.classList.toggle("dark", true);
+      localStorage.setItem("THEME", "DARK");
+    }
+    if (!this.checked && body) {
+      body.classList.toggle("dark", false);
+      localStorage.setItem("THEME", "LIGHT");
+    }
+  });
+
+  // grab theme from local storage
+  const lastTheme = localStorage.getItem("THEME");
+  if (lastTheme === "DARK") {
+    themeSw.checked = true;
+    themeSw.dispatchEvent(new Event("change"));
+  }
+}</script>
