@@ -5,6 +5,8 @@
     "build": "cross-env ./scripts/build.sh",
     "clean": "rimraf dist",
     "dev": "cross-env ./scripts/dev.sh",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
     "release": "release-it"
   },
   "dependencies": {},
@@ -28,7 +30,8 @@
     }
   },
   "lint-staged": {
-    "*.{html,js,json,md,yaml,yml}": "prettier --prose-wrap always --write"
+    "*.{css,html,js,json,yaml,yml}": "prettier --print-width=80 --write",
+    "*.md": "prettier --print-width=80 --prose-wrap=always --write"
   },
   "release-it": {
     "git": {
