@@ -24,7 +24,7 @@ if (navSw) {
   navSw.appendChild(sw);
 
   const themeSw = document.getElementById("themeSwitch");
-  themeSw.addEventListener("change", function() {
+  themeSw.addEventListener("change", function () {
     const body = document.getElementsByTagName("body")[0];
 
     if (this.checked && body) {
