@@ -9,11 +9,12 @@
 - The Ethics of Ambiguity (Beauvoir)
 - Invisible Women (Criado-Perez)
 
-## To Read
+## To Read/In Progress
 
 - Dietrich, E., 2017. Developer Hegemony: The Future Of Labor. Daedtech.
 - Elliot, E., 2019. Composing Software: An Exploration of Functional Programming
   and Object Composition in JavaScript. Leanpub.
+- Foucault, M., 1994. The Order of Things: An Archaeology of the Human Sciences. Vintage.
 - Gamma, E., 1995. Design Patterns: Elements Of Reusable Object-oriented
   Software. Addison-wesley Professional.
 - Holub, A., 2004. Holub on Patterns: Learning Design Patterns by Looking at
